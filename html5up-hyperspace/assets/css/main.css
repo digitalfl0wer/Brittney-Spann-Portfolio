@@ -405,6 +405,7 @@ input, select, textarea {
     right: 0;
     width: 100%;
     box-shadow: 0px 0px 6px rgba(99, 255, 112, 0.8);
+    z-index: 0;
 }
 	h2 {
 		font-size: 1.75em;
@@ -2710,7 +2711,10 @@ input, select, textarea {
 	  .title{
 		font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			text-align: center;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
+			margin-top: 40px;
+			position: relative;
+			z-index: 1;
 
 	  }
 	/* Dev tool kit icons  */
@@ -2724,7 +2728,9 @@ input, select, textarea {
 		max-height:200px;
 		overflow:visible;
 		margin-bottom:20px;
-		margin-top:20px;
+		margin-top:10px;
+		position: relative;
+		z-index: 1;
 	}
 	.icons{
 		width: 150px;
