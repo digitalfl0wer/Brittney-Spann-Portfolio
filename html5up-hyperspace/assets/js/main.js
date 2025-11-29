@@ -171,27 +171,16 @@
 		// Text shuffle "Who am I"
 
 		const words = [
-			"💡 I Am An Innovator",
-			"🎨 I Love To Create",
-			"💻 I am a Full Stack Software Engineer",
 			"💻 I am a Full Stack AI and Web3 Engineer",
-			"🧩 I am a  Problem Solver",
-			"📂 I Organize with Passion",
-			"📂 I learn with Passion",
-			" I am a  Mother",
+			" I learn with Passion",
 			"I am a Mother",
-			" I am a  Builder",
-			"🧘🏾‍♀️ I am a  Healer",
+			" I am a Builder",
 			"🧘🏾‍♀️ I am a Healer",
-			" I am a  Hobby Enthusiast",
-			"I am a Hobby Enthusiast",
-			" I am a Commit Philosopher",
-			"🌿♻️ I'm Deeply Committed to Sustainability",
 			"💡 I Am An Architech",
 			"🎨 I love all things design",
 			"Community is Everything",
 			"Autonomy is Key; Web3 is the Future",
-			"I am Curious",
+			"Forever Curious",
 		];
 
 		const typingSpeed = 70;
