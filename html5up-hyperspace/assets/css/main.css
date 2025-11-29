@@ -78,18 +78,23 @@ input, select, textarea {
 	appearance: none;
 }
 .text-container {
-	font-size: .8em;
+	font-size: 0.8em;
 	font-weight: bold;
-	display: inline-block;
+	display: flex;
+	width: fit-content;
 	border-right: 3px solid #CBA6F7; /* Lavender Cursor */
 	padding-right: 5px;
 	white-space: nowrap;
 	overflow: hidden;
 	animation: blink 0.7s infinite;
-	font-family: 'Bebas Neue',Arial, Helvetica, sans-serif;
-	align-items: center;  
-  	justify-content: center; 
-	display:flex;
+	font-family: 'Bebas Neue', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', Arial, Helvetica, sans-serif;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 20px;
+	text-align: center;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* CSS */
@@ -164,19 +169,27 @@ input, select, textarea {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 2rem;
+	padding: 4rem;
   }
   .pic{
 	max-height:330px;
-	border-radius:1px;
+	/* border-radius:10px; */
 	align-content:center;
 	justify-content:center;
-	border-radius: 16px; /* Rounded corners */
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 123, 255, 0.3); /* Subtle glow */
+	border-radius: 50px; /* Rounded corners */
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.0), 0 0 20px rgba(122, 72, 222, 0.5); /* Subtle glow */
 	max-width: 100%;
 	height: auto;
   }
-
+  .brie-image{
+	max-height:330px;
+	align-content:center;
+	justify-content:center;
+	border-radius: 50px; /* Rounded corners */
+	box-shadow:  0 0 10px rgba(8, 4, 15, 0.5); /* Subtle glow */
+	max-width: 100%;
+	height: auto;
+  }
 @keyframes blink {
 	50% {
 		border-right-color: transparent;
@@ -191,6 +204,46 @@ input, select, textarea {
 
 	body {
 		-ms-overflow-style: scrollbar;
+	}
+
+	/* Custom pointer graphic for the whole site */
+	body {
+		cursor: url('images/pointer.png') 16 0, pointer;
+	}
+
+	/* Ensure only the intro wrapper maintains an opaque black canvas while other wrappers stay transparent over the stars */
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		position: relative;
+		background-color: #31102F;
+		background: radial-gradient(ellipse at center, rgba(49,16,47,1) 0%, rgba(40,11,41,1) 100%);
+	}
+
+	#stars {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	#wrapper .wrapper {
+		background-color: transparent !important;
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
+
+	#intro {
+		background-color: #000;
+		background-image: none;
 	}
 
 	@media screen and (max-width: 480px) {
@@ -216,6 +269,7 @@ input, select, textarea {
 	}
 
 	body {
+		position: relative;
 		/* background: radial-gradient(circle, rgba(0, 100, 0, 0.2) 10%, #121212 80%); */
 		background:black;
 		color: #d4fcb8; 
@@ -3223,11 +3277,17 @@ input, select, textarea {
 			display: block;
 			position: relative;
 			width: 25em;
+			min-height: 22.5em;
+			overflow: hidden;
+			height: 100%;
 		}
 
 			.spotlights > section > .image img {
-				border-radius: 0;
-				display: block;
+			border-radius: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 			}
 
 			.spotlights > section > .image:before {
@@ -3335,6 +3395,73 @@ input, select, textarea {
 			}
 
 		}
+
+/* Image Popup */
+
+	.image-popup-overlay {
+		position: fixed;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.85);
+		display: none;
+		align-items: center;
+		justify-content: center;
+		padding: 1.5rem;
+		z-index: 10000;
+	}
+
+		.image-popup-overlay.active {
+			display: flex;
+		}
+
+		.image-popup-content {
+			position: relative;
+			max-width: 90vw;
+			max-height: 90vh;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			background: #101010;
+			border-radius: 1rem;
+			padding: 1rem;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+		}
+
+			.image-popup-content img {
+				max-width: 100%;
+				max-height: 75vh;
+				width: 100%;
+				height: auto;
+				object-fit: contain;
+				border-radius: 0.75rem;
+				border: 1px solid rgba(255, 255, 255, 0.15);
+				margin-bottom: 0.75rem;
+			}
+
+			.image-popup-caption {
+				color: #e5e5e5;
+				margin: 0;
+				font-size: 0.95rem;
+				text-align: center;
+			}
+
+			.image-popup-close {
+				position: absolute;
+				top: 0.5rem;
+				right: 0.75rem;
+				background: transparent;
+				border: none;
+				color: #fff;
+				font-size: 2rem;
+				cursor: pointer;
+				line-height: 1;
+				padding: 0;
+				z-index: 1;
+			}
+
+				.image-popup-close:focus-visible {
+					outline: 2px solid #fff;
+				}
 
 /* Table */
 

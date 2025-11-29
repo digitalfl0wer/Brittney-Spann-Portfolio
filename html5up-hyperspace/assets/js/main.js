@@ -168,56 +168,90 @@
 			});
 
 
-			//text shuffle Who am I
+		// Text shuffle "Who am I"
 
-			const words = ["💡 I Am An Innovator","🎨 I Love To Create",
-            "💻 I am a Full Stack Software Engineer",
-            "🧩 I am a  Problem Solver",
-            "📂 I Organize with Passion",
-            " I am a  Mother",
-            " I am a  Builder",
-            "🧘🏾‍♀️ I am a  Healer",
-            " I am a  Hobby Enthusiast",
-            " I am a Commit Philosopher",
-            "🌿♻️ I'm Deeply Committed to Sustainability"
-        ];
-        
+		const words = [
+			"💡 I Am An Innovator",
+			"🎨 I Love To Create",
+			"💻 I am a Full Stack Software Engineer",
+			"💻 I am a Full Stack AI and Web3 Engineer",
+			"🧩 I am a  Problem Solver",
+			"📂 I Organize with Passion",
+			"📂 I learn with Passion",
+			" I am a  Mother",
+			"I am a Mother",
+			" I am a  Builder",
+			"🧘🏾‍♀️ I am a  Healer",
+			"🧘🏾‍♀️ I am a Healer",
+			" I am a  Hobby Enthusiast",
+			"I am a Hobby Enthusiast",
+			" I am a Commit Philosopher",
+			"🌿♻️ I'm Deeply Committed to Sustainability",
+			"💡 I Am An Architech",
+			"🎨 I love all things design",
+			"Community is Everything",
+			"Autonomy is Key; Web3 is the Future",
+			"I am Curious",
+		];
+
+		const typingSpeed = 70;
+		const deletingSpeed = 40;
+		const holdAfterTyping = 1400;
+		const holdAfterDeleting = 600;
+
+		let index = 0;
+		let charIndex = 0;
+		const textElement = document.querySelector(".text-container");
+		let wordCharacters = words.map((word) => Array.from(word));
+
 		function shuffleWords(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                let j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
+			for (let i = array.length - 1; i > 0; i--) {
+				let j = Math.floor(Math.random() * (i + 1));
+				[array[i], array[j]] = [array[j], array[i]];
+			}
+			wordCharacters = array.map((word) => Array.from(word));
 
-        let index = 0;
-        let charIndex = 0;
-        const textElement = document.querySelector(".text-container");
-        shuffleWords(words); // Shuffle words before first display
+			return array;
+		}
 
-        function typeText() {
-            if (charIndex < words[index].length) {
-                textElement.innerHTML += words[index].charAt(charIndex);
-                charIndex++;
-                setTimeout(typeText, 100);
-            } else {
-                setTimeout(deleteText, 1500); // Pause before deleting
-            }
-        }
+		function typeText() {
+			if (!textElement)
+				return;
 
-        function deleteText() {
-            if (charIndex > 0) {
-                textElement.innerHTML = words[index].substring(0, charIndex - 1);
-                charIndex--;
-                setTimeout(deleteText, 50);
-            } else {
-                index = (index + 1) % words.length;
-                if (index === 0) shuffleWords(words); // Shuffle after all words are shown
-                setTimeout(typeText, 500);
-            }
-        }
+			if (charIndex < words[index].length) {
+				charIndex += 1;
+				textElement.textContent = wordCharacters[index]
+					.slice(0, charIndex)
+					.join('');
+				setTimeout(typeText, typingSpeed);
+			} else {
+				setTimeout(deleteText, holdAfterTyping);
+			}
+		}
 
-        typeText();
+		function deleteText() {
+			if (!textElement)
+				return;
+
+			if (charIndex > 0) {
+				charIndex -= 1;
+				textElement.textContent = wordCharacters[index]
+					.slice(0, charIndex)
+					.join('');
+				setTimeout(deleteText, deletingSpeed);
+			} else {
+				index = (index + 1) % words.length;
+				if (index === 0)
+					shuffleWords(words);
+				setTimeout(typeText, holdAfterDeleting);
+			}
+		}
+
+		if (textElement) {
+			textElement.textContent = "";
+			shuffleWords(words);
+			typeText();
+		}
 
 	// Features.
 		$('.features')
@@ -238,5 +272,58 @@
 
 				}
 			});
+
+	// Image gallery popup.
+		(function() {
+			var $imagePopup = $('.image-popup-overlay');
+
+			if ($imagePopup.length == 0)
+				return;
+
+			var $popupImg = $imagePopup.find('img'),
+				$popupCaption = $imagePopup.find('.image-popup-caption'),
+				$popupClose = $imagePopup.find('.image-popup-close');
+
+			var showImagePopup = function(src, alt, caption) {
+				if (!src)
+					return;
+
+				$popupImg.attr('src', src).attr('alt', alt || '');
+				$popupCaption.text(caption || alt || '');
+				$imagePopup
+					.addClass('active')
+					.attr('aria-hidden', 'false');
+			};
+
+			var hideImagePopup = function() {
+				$imagePopup
+					.removeClass('active')
+					.attr('aria-hidden', 'true');
+			};
+
+			$('.spotlights > section > .image')
+				.on('click', function(event) {
+					event.preventDefault();
+
+					var $img = $(this).find('img'),
+						caption = $(this).closest('.inner').find('h2').text().trim();
+
+					showImagePopup($img.attr('src'), $img.attr('alt'), caption);
+				});
+
+			$popupClose.on('click', function() {
+				hideImagePopup();
+			});
+
+			$imagePopup.on('click', function(event) {
+				if (event.target === this)
+					hideImagePopup();
+			});
+
+			$window.on('keydown', function(event) {
+				if (event.key === 'Escape')
+					hideImagePopup();
+			});
+		})();
 
 })(jQuery);

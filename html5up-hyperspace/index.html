@@ -18,7 +18,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300..700&family=Henny+Penny&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 	</head>
-	<body class="is-preload">
+<body class="is-preload">
+
+	<canvas id="stars" width="300" height="300"></canvas>
 
 		<!-- Sidebar -->
 			<section id="sidebar">
@@ -40,47 +42,55 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1 class="font">I'm  <span class="name" > Brie</span> </h1>
+							<h1 class="font">I'm <span class="name">Brie</span></h1>
 							<h2 class="font color">A Software Engineer</h2>
 							<div class="picCon">
-								<img class="pic" src="/images/IMG_6138.jpeg" alt="">
+								<img class="pic" src="/images/brie.png" alt="">
 							</div>
 							
 							<!-- <h2 class="font italics">Let's Build Together</h2> -->
 							<h2><span class="text-container">I Am An Innovator</span></h2>
 						</div>
 						<div class="topbuttons">
-							<!-- <a href="digitalflower.html">
+							<a href="digitalflower.html">
 								<button  class="topButton" role="button">Ready To Collab?</button>
-							</a> -->
-							<a target="_blank"  href="https://www.linkedin.com/in/bsspann/">
+							</a>
+							<a target="_blank" href="https://www.linkedin.com/in/bsspann/">
 								<button  class="topButton" role="button">LinkedIn</button>
 							</a>
+							<a href="https://docs.google.com/document/d/1TEAb4-lQhuKID5AX-rfdeG4_ot232LO_/edit?usp=sharing&ouid=100163571766293957390&rtpof=true&sd=true"><button class="topButton">
+								View My Resume
+							</button></a>
 							<a target="_blank" href="https://www.tiktok.com/@Digitalflower_"><button class="topButton">
 								TikTok
 							</button></a>
 						</div>
 						<section class="whoIAm">
-							<h2 class="title font">Who I am</h2>
+							<h2 class="title font">About Me</h2>
 							<p class="aboutMe">
-								Hi, I’m Brie—a software engineer who brings ideas to life through clean code, thoughtful design, and user-centered experiences. I come from a creative, hands-on background as the founder of a jewelry brand, where I taught myself to build websites, run marketing, and shape memorable customer journeys. That’s where I fell in love with tech—not just the tools, but the power to build things that feel good to use and truly serve people.
+								Hi, I'm Brie—a software engineer who brings ideas to life through clean code, thoughtful design, and user-centered experiences. I come from a creative, hands-on background as the founder of a jewelry brand, where I taught myself to build websites, run marketing, and shape memorable customer journeys. That's where I fell in love with tech—not just the tools, but the power to build things that feel good to use and truly serve people.
 							</p>
 							<p class="aboutMe">	
-								What drives me most is the mix of creativity and problem-solving in development. I love the moment when an idea becomes something tangible—something someone can interact with, benefit from, or find joy in. That’s what keeps me coming back to the work.
+								What drives me most is the mix of creativity and problem-solving in development. I love the moment when an idea becomes something tangible—something someone can interact with, benefit from, or find joy in. That's what keeps me coming back to the work.
 
 							</p>
 							<p class="aboutMe">
-								Today, I build interactive applications using JavaScript, Node.js, React, and API integrations through Resilient Coders. I’ve also worked with freelance clients and developed interactive games, learning how to stay inspired, collaborative, and curious at every turn.
+								Today, I build interactive applications using JavaScript, Node.js, React, and API integrations through Resilient Coders. I've also worked with freelance clients and developed interactive games, learning how to stay inspired, collaborative, and curious at every turn.
 							</p>
 							<p class="aboutMe">
-								I care deeply about creating technology that’s thoughtful, and grounded in real human needs. I bring empathy, curiosity, and a doer’s mindset to every project. I thrive when the pressure’s on, jump into collaboration with ease, and get energized by turning big ideas into thoughtful, functional products.
+								I care deeply about creating technology that's thoughtful, and grounded in real human needs. I bring empathy, curiosity, and a doer's mindset to every project. I thrive when the pressure's on, jump into collaboration with ease, and get energized by turning big ideas into thoughtful, functional products.
 
-								</p>
+							</p>
+							<p class="aboutMe">
+								I'm also an AI engineer and Web3 developer who turns ideas into usable, beautiful products. Now I work with React, Next.js, MCPs, and on-chain tools to build AI-powered, interactive experiences. I care about clear impact: more access, less friction, and more joy for the communities I build for.
+
+							</p>
 						</section>
 						<h2 class="title font">Dev ToolKit</h2>
 						<section class="devToolKit">
 							
-							<h2 src="" alt="" class="icons fa-brands fa-html5"></h2>
+							<h2 src="" alt="" <i class="icons fab fa-react"></i>
+								</h2>
 							<h2 src="" alt="" class="icons fa-brands fa-css"></h2>
 							<h2 src="" alt="" class="icons fa-brands fa-js"></h2>
 							<h2 src="" alt="" class="icons fa-brands fa-github"></h2>
@@ -92,12 +102,13 @@
 
 				<!-- One -->
 					<section id="one" class="wrapper style2 spotlights">
+						<h2 class="title font">Creations</h2>
 						<section class="projects">
 							<video autoplay data-position="center center" class="hover-video image" muted loop playsinline src="assets/css/images/Screen Recording 2025-05-03 at 8.35.07 PM.mp4"></video>
 							<div class="content">
 								<div class="inner">
 									<a class="github" href="https://github.com/BSG6/WishListBooks">Book Wishlist</a>
-									<p>“A simple full-stack app that lets users create a personal book wishlist. Built with Node, Express, and MongoDB, it lets you add and remove titles as your reading goals change.”</p>
+									<p>"A simple full-stack app that lets users create a personal book wishlist. Built with Node, Express, and MongoDB, it lets you add and remove titles as your reading goals change."</p>
 								</div>
 							</div>
 						</section>
@@ -107,23 +118,80 @@
 							<div class="content">
 								<div class="inner">
 									<a class="github" href="https://github.com/BSG6/WishListBooks">Black Magic Slot Machine</a>
-									<p>“A handmade slot machine using nothing but basic JavaScript and Black girl magic. Spins, bets, wins—all coded by me with symbols that reflect my culture and creativity.”</p>
+									<p>"A handmade slot machine using nothing but basic JavaScript and Black girl magic. Spins, bets, wins—all coded by me with symbols that reflect my culture and creativity."</p>
+								</div>
+							</div>
+						</section>
+						<section class="projects">
+							<a href="#" class="image"><img src="images/slotmachine1.png" alt="Screenshot of a slot machine experience" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Black Magic Slot Machine</h2>
+									<p>Black Magic Reels is my love letter to Black joy in game form, a small-batch, Afro-chic slot machine where strict, deterministic logic runs underneath reels wrapped in rich cultural symbols, lush color, and ritual-level drama. Every spin feels like ceremony: clear math, glowing paylines, and a UI that is representative of the culture that inspired it.</p>
+									<ul class="actions">
+										<li><a href="https://black-magic-slots-fgjs.vercel.app/" class="button primary" target="_blank" rel="noreferrer">Visit BMS</a></li>
+										<li><a href="https://github.com/digitalfl0wer/BlackMagicSlots" class="button" target="_blank" rel="noreferrer">GitHub Repo</a></li>
+										
+									</ul>
 								</div>
 							</div>
 						</section>
 						<!-- <section class="projects">
-							<a href="#" class="image"><img src="images/levelup.png" alt="" data-position="25% 25%" /></a>
+							<a href="#" class="image"><img src="images/hello.png" alt="Screenshot of a hello hands experience" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2 class="font">Custom Website</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-
+									<h2>Hello Hands</h2>
+									<p>HelloHands is a small, loving ASL practice app I built for my family, especially my 3-year-old with apraxia to make daily signing gentle, joyful, and repeatable.</p>
 									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
+										<li><a href="https://hellohands.vercel.app/" class="button primary" target="_blank" rel="noreferrer">Visit Hello Hands</a></li>
+										<li><a href="https://github.com/digitalfl0wer/hellohands" class="button" target="_blank" rel="noreferrer">GitHub Repo</a></li>
+										<li><a href="#" class="button alt" target="_blank" rel="noreferrer">Video Tour Coming Soon</a></li>
 									</ul>
 								</div>
 							</div>
 						</section> -->
+						<section class="projects">
+							<a href="#" class="image"><img src="images/hello.png" alt="Screenshot of a hello hands experience" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Hello Hands</h2>
+									<p>HelloHands is a small, loving ASL practice app I built for my family, especially my 3-year-old with apraxia to make daily signing gentle, joyful, and repeatable. This app is created with MediaPipe and Goose CLI</p>
+									<ul class="actions">
+										<li><a href="https://hellohands.vercel.app/" class="button primary" target="_blank" rel="noreferrer">Visit Hello Hands</a></li>
+										<li><a href="https://github.com/digitalfl0wer/hellohands" class="button" target="_blank" rel="noreferrer">GitHub Repo</a></li>
+										
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section class="projects">
+							<a href="#" class="image"><img src="images/sacredstyles.png" alt="homepage of a generated hairstyle" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Sacred Styles</h2>
+									<p>Sacred Styles is an AI style studio honoring Black hair—built by and for us. I trained the model on my own face to set a standard for consent and representation, so you can preview protective styles and colorways with texture, culture, and creativity at the core.</p>
+									<ul class="actions">
+										<li><a href="https://sacredstyles.vercel.app/" class="button primary" target="_blank" rel="noreferrer">Visit Sacred Styles</a></li>
+										<li><a href="https://github.com/digitalfl0wer/sacredstyles" class="button" target="_blank" rel="noreferrer">GitHub Repo</a></li>
+										
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section class="projects">
+							<a href="#" class="image"><img src="images/Orbis.png" alt="Orbis landing page" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Orbis</h2>
+									<p>Daily coding mentor for all esp bootcamp grads & self-taught devs: one focused problem, a calm UI, and an AI coach that nudges instead of overwhelms.</p>
+									<ul class="actions">
+										<li><a href="https://orbis-ykmi.vercel.app/" class="button primary" target="_blank" rel="noreferrer">Visit Orbis</a></li>
+										<li><a href="https://github.com/digitalfl0wer/orbis" class="button" target="_blank" rel="noreferrer">Github Repo</a></li>
+										
+									</ul>
+								</div>
+							</div>
+						</section>
 					</section>
 
 				<!-- Two -->
@@ -184,8 +252,12 @@
 				<!- Three -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
+							<h2 class="font">Projects, Partnerships, Possibilities</h2>
+							<p>I'm here for work that lifts people, always searching for opportunities to collaborate with anyone building something honest.
+								I enjoy moving with care and learning in the process and courage in the details. 
+								If there's a community to honor and a goal to move, I'm all in.</p>
 							<h2 class="font">Get in touch</h2>
-							<p>Interested in working together or have an opportunity you'd like to share? I’m always open to meaningful connections and new possibilities. Drop a message below — </p>
+							<p>Interested in working together or have an opportunity you'd like to share? I'm always open to meaningful connections and new possibilities. Drop a message below — </p>
 							<div class="split style1">
 								<section>
 									<form method="post" action="https://formspree.io/f/xldjwyjj">
@@ -209,11 +281,16 @@
 									</form>
 								</section>
 								<section>
+									
 									<ul class="contact">
-										<!-- <li>
+										<img src="images/b.JPEG" alt="Brie Spann" class="brie-image pic">
+										<a href="https://docs.google.com/document/d/1TEAb4-lQhuKID5AX-rfdeG4_ot232LO_/edit?usp=sharing&ouid=100163571766293957390&rtpof=true&sd=true"><button class="topButton">
+											View My Resume
+										</button></a>
+										<li>
 											<h3>Philadelphia, PA</h3>
 											
-										</li> -->
+										</li>
 										<!-- <li>
 											<h3>Email</h3>
 											<a href="#"></a>
@@ -244,7 +321,7 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: By Brie Spann (Digital Flower)</a></li>
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: By Brie Spann (Digital Flower ⁕)</a></li>
 					</ul>
 				</div>
 			</footer>
@@ -257,6 +334,16 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/delaunator@5.0.0/dist/delaunator.min.js"></script>
+			<script src="assets/js/stars.js"></script>
+
+		<div class="image-popup-overlay" role="dialog" aria-hidden="true" aria-label="Image preview">
+			<div class="image-popup-content">
+				<button class="image-popup-close" aria-label="Close preview">&times;</button>
+				<img src="" alt="">
+				<p class="image-popup-caption" aria-live="polite"></p>
+			</div>
+		</div>
 
 	</body>
 </html>
